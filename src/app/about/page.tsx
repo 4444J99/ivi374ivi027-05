@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AnalyticsViewTracker } from "@/components/analytics-view-tracker";
 import { MotifSearch } from "@/components/motif-search";
 import { getAllCanonicalDocs } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "MET4MORFOSES is an MFA thesis by Anthony James Padavano at Florida Atlantic University (May 2018) — an evolving hybrid between mythic narrative, computational process, and multimedia publication.",
+};
 
 export default async function AboutPage() {
   const docs = await getAllCanonicalDocs();

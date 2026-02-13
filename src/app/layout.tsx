@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Barlow_Condensed, Cormorant_Garamond, Space_Grotesk } from "next/font/google";
 
+import { LayoutTransition } from "@/components/layout-transition";
 import { ModeNav } from "@/components/mode-nav";
 import { PostHogBootstrap } from "@/components/posthog-bootstrap";
 import { MVSConsole } from "@/components/system/console";
@@ -25,9 +26,25 @@ const literary = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "ivi374ivi027-05 // MET4MORFOSES",
+  title: {
+    default: "MET4MORFOSES — Anthony James Padavano",
+    template: "%s • MET4MORFOSES",
+  },
   description:
-    "A digital representation of Anthony James Padavano's MFA thesis: MET4MORFOSES.",
+    "A digital representation of Anthony James Padavano's MFA thesis: MET4MORFOSES — Ovid's Metamorphoses reinterpreted through mythic narrative, computational process, and multimedia publication.",
+  openGraph: {
+    type: "website",
+    siteName: "MET4MORFOSES",
+    title: "MET4MORFOSES — Anthony James Padavano",
+    description:
+      "An MFA thesis reinterpreting Ovid's Metamorphoses through mythic narrative, computational process, and multimedia publication.",
+  },
+  twitter: {
+    card: "summary",
+    title: "MET4MORFOSES — Anthony James Padavano",
+    description:
+      "An MFA thesis reinterpreting Ovid's Metamorphoses through mythic narrative, computational process, and multimedia publication.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -60,7 +77,30 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </nav>
         </header>
 
-        <main id="main-content">{children}</main>
+        <main id="main-content">
+          <LayoutTransition>{children}</LayoutTransition>
+        </main>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ScholarlyArticle",
+              name: "MET4MORFOSES",
+              author: {
+                "@type": "Person",
+                name: "Anthony James Padavano",
+              },
+              datePublished: "2018-03-20",
+              educationalLevel: "Master of Fine Arts",
+              about: "Ovid's Metamorphoses reinterpreted through mythic narrative, computational process, and multimedia publication.",
+              description:
+                "A digital representation of Anthony James Padavano's MFA thesis: MET4MORFOSES — Ovid's Metamorphoses reinterpreted through mythic narrative, computational process, and multimedia publication.",
+              inLanguage: "en",
+            }),
+          }}
+        />
       </body>
     </html>
   );

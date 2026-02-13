@@ -38,6 +38,7 @@ async function run() {
       cwd: root,
       encoding: "utf8",
       maxBuffer: 1024 * 1024 * 64,
+      timeout: 30_000,
     });
 
     if (extraction.status !== 0 || extraction.error) {

@@ -44,7 +44,7 @@ export function ModeNav({ id }: Props) {
   return (
     <nav aria-label="Experience mode" className="mode-nav" id={id}>
       {modes.map((mode) => {
-        const active = pathname === mode.href;
+        const active = pathToMode(pathname) === mode.mode;
         return (
           <Link
             className={active ? "mode-chip active" : "mode-chip"}

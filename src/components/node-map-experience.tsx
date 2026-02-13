@@ -1,14 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useMemo, useState, useEffect } from "react";
 
 import type { CanonicalDoc, NarrativeNode } from "@/types/content";
+import { canUseWebGL } from "@/lib/webgl-probe";
 import { ArtifactOverlay } from "./artifact-overlay";
-import { ChronoHelix } from "./sensorium/chrono-helix";
 import { NodeMap2D } from "./node-map-2d";
 import { useGlitchSynth } from "@/hooks/use-glitch-synth";
 import { useNodeNavigation } from "@/hooks/use-node-navigation";
+
+const ChronoHelix = dynamic(
+  () => import("./sensorium/chrono-helix").then((m) => m.ChronoHelix),
+  { ssr: false },
+);
 
 interface Props {
   nodes: NarrativeNode[];
@@ -28,7 +34,9 @@ function buildDocLookup(docs: CanonicalDoc[]): Record<string, CanonicalDoc> {
  */
 export function NodeMapExperience({ nodes, docs }: Props) {
   const docsBySlug = useMemo(() => buildDocLookup(docs), [docs]);
-  const [viewMode, setViewMode] = useState<"2d" | "3d">("3d");
+  const [viewMode, setViewMode] = useState<"2d" | "3d">(() =>
+    canUseWebGL() ? "3d" : "2d",
+  );
   
   const { 
     activeNode, 
@@ -158,7 +166,7 @@ export function NodeMapExperience({ nodes, docs }: Props) {
             <ArtifactOverlay nodeId={activeNode.id} />
           </>
         ) : (
-          <p>No nodes found yet.</p>
+          <p>Select a node to explore.</p>
         )}
       </aside>
     </section>

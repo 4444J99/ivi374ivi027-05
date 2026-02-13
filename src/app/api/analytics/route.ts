@@ -37,7 +37,22 @@ const buckets = new Map<string, Bucket>();
 const maxTokens = 60;
 const refillRatePerSecond = 1;
 
+const staleThresholdMs = 60 * 60 * 1000; // 1 hour
+let lastCleanup = Date.now();
+
+function evictStaleBuckets() {
+  const now = Date.now();
+  if (now - lastCleanup < staleThresholdMs) return;
+  lastCleanup = now;
+  for (const [key, bucket] of buckets) {
+    if (now - bucket.lastRefillMs > staleThresholdMs) {
+      buckets.delete(key);
+    }
+  }
+}
+
 function allowRequest(clientKey: string): boolean {
+  evictStaleBuckets();
   const now = Date.now();
   const current = buckets.get(clientKey) ?? { tokens: maxTokens, lastRefillMs: now };
 

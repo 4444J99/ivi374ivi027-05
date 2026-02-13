@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
+
 import { AnalyticsViewTracker } from "@/components/analytics-view-tracker";
 import { ArchiveBrowser } from "@/components/archive-browser";
 import { getAllMirrorAssets, getMirrorExtensionCounts } from "@/lib/mirror";
+
+export const metadata: Metadata = {
+  title: "Archive",
+  description:
+    "Complete source archive of MET4MORFOSES thesis artifacts — PDF, Pages, Numbers, ZIP, and related source files in their preserved directory structure.",
+};
 
 export default function ArchivePage() {
   const assets = getAllMirrorAssets();

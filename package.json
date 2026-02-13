@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run content:build && next build",
+    "build": "npm run content:build-full && next build",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "eslint .",
@@ -26,7 +26,8 @@
     "content:broadcast": "tsx scripts/broadcast-signal.ts",
     "content:qa": "tsx scripts/qa-canonical-fidelity.ts",
     "content:integrity": "tsx scripts/verify-mirror-integrity.ts",
-    "content:build": "npm run content:ingest && npm run content:mirror && npm run content:nodes && npm run content:qa && npm run content:integrity"
+    "content:build": "npm run content:ingest && npm run content:mirror && npm run content:nodes && npm run content:qa && npm run content:integrity",
+    "content:build-full": "npm run content:ingest && npm run content:mirror && npm run content:nodes && npm run content:analyze && npm run content:evolution && npm run content:artifacts && npm run content:generate && npm run content:full && npm run content:export && npm run content:report && npm run content:broadcast && npm run content:qa && npm run content:integrity"
   },
   "dependencies": {
     "@react-three/drei": "10.7.7",

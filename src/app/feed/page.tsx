@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
+
 import { AnalyticsViewTracker } from "@/components/analytics-view-tracker";
 import { FeedView } from "@/components/feed-view";
 import { ScrollMemory } from "@/components/scroll-memory";
 import { getAllCanonicalDocs } from "@/lib/content";
 import { getFeedItems } from "@/lib/nodes";
+
+export const metadata: Metadata = {
+  title: "Faux Social Feed",
+  description:
+    "Sequenced thesis excerpts as a fabricated social surface — narrative as signal flood, revealing cross-threads in motion.",
+};
 
 export default async function FeedPage() {
   const docs = await getAllCanonicalDocs();

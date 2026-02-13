@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AnalyticsViewTracker } from "@/components/analytics-view-tracker";
@@ -5,6 +6,12 @@ import { NodeMapExperience } from "@/components/node-map-experience";
 import { ScrollMemory } from "@/components/scroll-memory";
 import { getAllCanonicalDocs } from "@/lib/content";
 import { getNarrativeNodes } from "@/lib/nodes";
+
+export const metadata: Metadata = {
+  title: "Mythic Node Map",
+  description:
+    "Explore MET4MORFOSES characters and motifs as a living constellation. Each node opens into thesis passages, cycle crossings, and linked textual transformations.",
+};
 
 export default async function HomePage() {
   const [docs, nodes] = await Promise.all([getAllCanonicalDocs(), Promise.resolve(getNarrativeNodes())]);

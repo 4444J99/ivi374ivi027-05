@@ -18,7 +18,7 @@
       "y": 50
     },
     "isTrending": true,
-    "viewCount": 519
+    "viewCount": 369
   },
   {
     "id": "@MVS",
@@ -37,7 +37,7 @@
       "y": 59.583
     },
     "isTrending": false,
-    "viewCount": 24
+    "viewCount": 41
   },
   {
     "id": "@ANON",
@@ -54,7 +54,7 @@
       "y": 70.207
     },
     "isTrending": false,
-    "viewCount": 42
+    "viewCount": 18
   },
   {
     "id": "@JOV",
@@ -88,7 +88,7 @@
       "y": 77.424
     },
     "isTrending": false,
-    "viewCount": 3
+    "viewCount": 0
   },
   {
     "id": "@DAFNE",
@@ -105,7 +105,7 @@
       "y": 67.917
     },
     "isTrending": true,
-    "viewCount": 243
+    "viewCount": 339
   },
   {
     "id": "@INAKVS",
@@ -122,7 +122,7 @@
       "y": 50
     },
     "isTrending": false,
-    "viewCount": 36
+    "viewCount": 34
   },
   {
     "id": "@ARGVS",
@@ -139,7 +139,7 @@
       "y": 27.917
     },
     "isTrending": false,
-    "viewCount": 1
+    "viewCount": 4
   },
   {
     "id": "@IO",
@@ -156,7 +156,7 @@
       "y": 8.142
     },
     "isTrending": false,
-    "viewCount": 42
+    "viewCount": 6
   },
   {
     "id": "@DIANA",
@@ -173,7 +173,7 @@
       "y": -2.5
     },
     "isTrending": false,
-    "viewCount": 18
+    "viewCount": 43
   },
   {
     "id": "@H",
@@ -190,7 +190,7 @@
       "y": 0.925
     },
     "isTrending": false,
-    "viewCount": 36
+    "viewCount": 21
   },
   {
     "id": "@NEPTVN",
@@ -207,7 +207,7 @@
       "y": 19.583
     },
     "isTrending": false,
-    "viewCount": 1
+    "viewCount": 13
   },
   {
     "id": "@NARSISVS",
@@ -224,7 +224,7 @@
       "y": 50
     },
     "isTrending": true,
-    "viewCount": 155
+    "viewCount": 110
   },
   {
     "id": "@EKO",
@@ -241,7 +241,7 @@
       "y": 84.583
     },
     "isTrending": false,
-    "viewCount": 10
+    "viewCount": 39
   },
   {
     "id": "@BAKVS",
@@ -258,7 +258,7 @@
       "y": 113.509
     },
     "isTrending": false,
-    "viewCount": 6
+    "viewCount": 0
   },
   {
     "id": "@ASOTES",
@@ -275,7 +275,7 @@
       "y": 127.5
     },
     "isTrending": false,
-    "viewCount": 40
+    "viewCount": 39
   },
   {
     "id": "@ARSIPE",
@@ -292,7 +292,7 @@
       "y": 120.725
     },
     "isTrending": false,
-    "viewCount": 18
+    "viewCount": 34
   },
   {
     "id": "@VENVS",
@@ -309,6 +309,6 @@
       "y": 92.917
     },
     "isTrending": false,
-    "viewCount": 16
+    "viewCount": 42
   }
 ]

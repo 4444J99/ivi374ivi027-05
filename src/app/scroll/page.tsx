@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
 import { AnalyticsViewTracker } from "@/components/analytics-view-tracker";
 import { ScrollMemory } from "@/components/scroll-memory";
 import { ScrollView } from "@/components/scroll-view";
 import { getAllCanonicalDocs } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Three-Cycle Scroll",
+  description:
+    "A continuous long-form reading arc through Sikl 1, 2, and 3 — chapter transitions and direct jumps into the canonical reader.",
+};
 
 const cycleSlugs = new Set(["sikl-1", "sikl-2", "sikl-3"]);
 
