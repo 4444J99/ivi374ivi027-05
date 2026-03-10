@@ -1,0 +1,8 @@
+schema_version: '1.0'
+repo: ivi374ivi027-05
+organ: II
+display_name: "MET4MORFOSES Web Edition \u2014 Digital representation of MFA thesis\
+  \ as immersive multi-mode web experience (Next.js + Playwright)"
+delivery:
+- platform: web_app
+  status: not_started
